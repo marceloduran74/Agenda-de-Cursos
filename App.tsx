@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { MonthAgenda, CourseEntry, Status, CourseDefinition, AliquotaEntry, FeeEntry, FaturamentoMonthData } from './types';
 import { INITIAL_AGENDAS, COURSES_DATA, MARCELO_COURSES_DATA, MARCIA_COURSES_DATA, INITIAL_ALIQUOTA_DATA, INITIAL_FEES_DATA, INITIAL_ALIQUOTA_DATA_2026, INITIAL_FEES_DATA_2026, INITIAL_FATURAMENTO_DATA, MONTH_NAMES, INITIAL_COURSES_DATA_2027, INITIAL_ALIQUOTA_DATA_2027, INITIAL_FEES_DATA_2027 } from './constants';
@@ -13,8 +14,6 @@ import { AliquotaTable2026 } from './components/AliquotaTable2026';
 import { AliquotaTable2027 } from './components/AliquotaTable2027';
 import { CloudUploadIcon } from './components/icons/CloudUploadIcon';
 import { FaturamentoView } from './components/FaturamentoTable'; 
-// FIX: Import Logo component
-import { Logo } from './components/icons/Logo';
 
 type View = 'Marcelo' | 'Márcia' | 'Faturamento' | 'TabelaDeReferencia';
 
@@ -891,13 +890,10 @@ const App: React.FC = () => {
             {/* Empty left column for spacing to ensure the title is truly centered */}
             <div />
 
-            {/* FIX: Centered title & Logo */}
-            <div className="flex items-center justify-center gap-4">
-              <Logo />
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-100 truncate">
-                Agenda de Cursos SENAR - Fios e Panos LTDA
-              </h1>
-            </div>
+            {/* Centered title */}
+            <h1 className="text-xl sm:text-2xl font-bold text-slate-100 truncate px-4">
+              Agenda de Cursos SENAR - Fios e Panos LTDA
+            </h1>
             
             {/* Right-aligned controls */}
             <div className="flex items-center justify-end gap-2 sm:gap-4">
