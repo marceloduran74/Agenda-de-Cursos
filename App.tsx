@@ -763,6 +763,9 @@ const App: React.FC = () => {
       );
     }
     if (activeView === 'Faturamento') {
+      // FIX: Define selectedAgendaReferenceYear based on the synchronized selectedReferenceYears state.
+      // Since both 'Márcia' and 'Marcelo' reference years are kept in sync, we can use either.
+      const selectedAgendaReferenceYear = selectedReferenceYears['Márcia'];
       return (
         <FaturamentoView 
           faturamentoData={faturamentoData} 
@@ -771,7 +774,7 @@ const App: React.FC = () => {
           onUpdateIndividualTotal={handleUpdateIndividualTotal}
           onAddIndividualTotalRow={handleAddIndividualTotalRow}
           onDeleteIndividualTotalRow={handleDeleteIndividualTotalRow}
-          selectedAgendaReferenceYear={selectedReferenceYears['Márcia']}
+          selectedAgendaReferenceYear={selectedAgendaReferenceYear}
         />
       );
     }
@@ -797,7 +800,7 @@ const App: React.FC = () => {
     const referenceYear = selectedReferenceYears[activeView as 'Marcelo' | 'Márcia'];
     const referenceData = getReferenceData(referenceYear);
     const year = parseInt(referenceYear, 10);
-    const allCourses = activeAgenda.flatMap(month => month.courses); // Still used for calculating `monthlyHoursTotal` which is now removed
+    // Removed: const allCourses = activeAgenda.flatMap(month => month.courses); // Still used for calculating `monthlyHoursTotal` which is now removed
     
     return (
       <div className="space-y-6">

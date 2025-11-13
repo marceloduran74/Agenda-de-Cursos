@@ -1,3 +1,4 @@
+
 import React, { useMemo } from 'react';
 import { FaturamentoMonthData } from '../types';
 import { formatCurrency } from './MonthCard'; // Re-using the formatCurrency helper
@@ -55,7 +56,7 @@ const FaturamentoHeaderStats: React.FC<FaturamentoHeaderStatsProps> = ({ faturam
     }, [faturamentoData]);
 
     return (
-        <div className="sticky top-[84px] z-10 bg-gray-900 pb-6 pt-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8"> {/* Added negative margins to stretch full width of main container, and padding for sticky effect */}
+        <div className="lg:sticky lg:top-[97px] z-10 bg-gray-900/80 backdrop-blur-lg pb-6 pt-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <StatCard 
                     title="Faturamento Bruto Anual"

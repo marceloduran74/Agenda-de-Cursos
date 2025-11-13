@@ -85,7 +85,7 @@ export const CourseRow: React.FC<CourseRowProps> = ({
   }, [course.courseName, referenceCourses]);
 
   const courseValue = useMemo(() => course.overriddenValue ?? courseData?.value ?? 0, [course.overriddenValue, courseData]);
-  const courseHours = useMemo(() => course.overriddenHours ?? courseData?.hours, [course.overriddenHours, courseData]);
+  // Removed: const courseHours = useMemo(() => course.overriddenHours ?? courseData?.hours, [course.overriddenHours, courseData]);
 
   const sortedCourses = useMemo(() => 
     [...availableCourses].sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'))
@@ -101,6 +101,8 @@ export const CourseRow: React.FC<CourseRowProps> = ({
     onUpdate({ status: newStatus });
   };
 
+  // Removed handleHoursChange
+  /*
   const handleHoursChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value === '') {
@@ -112,6 +114,7 @@ export const CourseRow: React.FC<CourseRowProps> = ({
       onUpdate({ overriddenHours: numericValue });
     }
   };
+  */
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value;
@@ -245,6 +248,7 @@ export const CourseRow: React.FC<CourseRowProps> = ({
           ))}
         </select>
       </td>
+      {/* Removed: Hours Column
       <td className={`px-4 py-2 text-center`}>
           <input
             type="text"
@@ -255,6 +259,7 @@ export const CourseRow: React.FC<CourseRowProps> = ({
             aria-label={`Horas para ${course.courseName}`}
           />
       </td>
+      */}
       <td className={`px-4 py-2 text-center`}>
         {isPrivacyMode ? (
           'R$ ••••••'

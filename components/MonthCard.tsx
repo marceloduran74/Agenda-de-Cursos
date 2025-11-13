@@ -89,7 +89,7 @@ export const MonthCard: React.FC<MonthCardProps> = ({
               <th scope="col" className="px-4 py-3 min-w-[150px]">Data</th>
               <th scope="col" className="px-4 py-3 min-w-[150px]">Localidade</th>
               <th scope="col" className="px-4 py-3 min-w-[180px]">Curso</th>
-              <th scope="col" className="px-4 py-3 text-center">Horas</th>
+              {/* Removed: <th scope="col" className="px-4 py-3 text-center">Horas</th> */}
               <th scope="col" className="px-4 py-3 text-center">Valor</th>
               <th scope="col" className="px-4 py-3 text-center min-w-[140px]">Status</th>
               <th scope="col" className="px-4 py-3 text-center">Ações</th>
@@ -115,7 +115,7 @@ export const MonthCard: React.FC<MonthCardProps> = ({
             ))
             ) : (
               <tr>
-                <td colSpan={8} className="text-center py-6 text-slate-500">
+                <td colSpan={7} className="text-center py-6 text-slate-500">
                   Nenhum curso adicionado para este mês.
                 </td>
               </tr>
