@@ -1,0 +1,5 @@
+{
+  "name": "Agenda de Cursos SENAR - Fios e Panos LTDA BLACK",
+  "description": "An application to organize your course schedule, tracking months, dates, locations, courses, hours, costs, and status. It automatically calculates monthly totals based on predefined course values.",
+  "requestFramePermissions": []
+}
