@@ -913,7 +913,7 @@ const App: React.FC = () => {
                  <TabButton
                    key={agendaName}
                    view={agendaName as Exclude<View, 'TabelaDeReferencia'>}
-                   label={agendaName === 'Faturamento' ? 'Faturamento' : `Agenda ${agendaName}`}
+                   label={agendaName}
                    isDragged={draggedAgenda === agendaName}
                    onDragStart={() => handleAgendaDragStart(agendaName)}
                    onDragOver={(e) => handleAgendaDragOver(e, agendaName)}
