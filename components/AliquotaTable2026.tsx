@@ -19,7 +19,7 @@ const formatCurrencyFromDigits = (digits: string): string => {
 };
 
 export const AliquotaTable2026: React.FC<AliquotaTable2026Props> = ({ aliquotaData, feesData, onUpdateAliquota, onUpdateFee }) => {
-  const inputClasses = "w-full text-right bg-transparent border-0 rounded-none py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-slate-700";
+  const inputClasses = "w-full text-right bg-transparent border-0 rounded-none py-1 px-4 focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-slate-700";
 
   const handleAliquotaChange = (e: React.ChangeEvent<HTMLInputElement>, month: string) => {
     const value = e.target.value.replace('%', '');
@@ -38,13 +38,13 @@ export const AliquotaTable2026: React.FC<AliquotaTable2026Props> = ({ aliquotaDa
       <div className="p-4 bg-slate-700/50 border-b border-slate-700">
         <h2 className="text-xl font-bold text-slate-100">Alíquota Simples 2026</h2>
       </div>
-      <div className="p-4 space-y-6">
+      <div className="p-4 space-y-3">
         <div className="overflow-x-auto border border-slate-700 rounded-lg">
           <table className="w-full text-sm text-left text-slate-300">
             <tbody>
               {aliquotaData.map(item => (
                 <tr key={item.month} className="border-b border-slate-700 last:border-b-0">
-                  <td className="px-4 py-2 font-medium text-slate-100 bg-slate-700/50 w-1/3">
+                  <td className="px-4 py-1 font-medium text-slate-100 bg-slate-700/50 w-1/3">
                     {item.month}
                   </td>
                   <td className="p-0">
@@ -67,7 +67,7 @@ export const AliquotaTable2026: React.FC<AliquotaTable2026Props> = ({ aliquotaDa
              <tbody>
               {feesData.map(item => (
                 <tr key={item.label} className="border-b border-slate-700 last:border-b-0">
-                  <td className="px-4 py-2 font-medium text-slate-100 bg-slate-700/50 w-1/2">
+                  <td className="px-4 py-1 font-medium text-slate-100 bg-slate-700/50 w-1/2">
                     {item.label}
                   </td>
                   <td className="p-0">

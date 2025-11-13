@@ -701,8 +701,8 @@ const App: React.FC = () => {
       const commonProps = { isPrivacyMode };
       
       return (
-        <div className="space-y-6">
-          <div className="flex flex-wrap gap-3 mb-4">
+        <div className="space-y-3">
+          <div className="flex flex-wrap gap-3">
             {['2025', '2026', '2027'].map(year => (
               <button
                 key={year}
@@ -886,7 +886,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-gray-900 font-sans text-slate-300">
       <header className="bg-gray-800/80 backdrop-blur-lg shadow-sm sticky top-0 z-20">
         <div className={`${isFaturamentoView ? '' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8`}>
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-3">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center py-2">
             {/* Empty left column for spacing to ensure the title is truly centered */}
             <div />
 
@@ -907,7 +907,7 @@ const App: React.FC = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center border-t border-slate-700 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-2">
+          <div className="flex flex-col sm:flex-row justify-between items-center border-t border-slate-700 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-1">
             <nav className="flex items-center gap-1 sm:gap-2" role="tablist">
                {agendaOrder.map(agendaName => (
                  <TabButton
@@ -960,7 +960,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </header>
-      <main className={`mx-auto p-4 sm:p-6 lg:p-8`} role="tabpanel" aria-labelledby={`${activeView}-tab`}>
+      <main className={`mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3 lg:pt-4 pb-4 sm:pb-6 lg:pb-8`} role="tabpanel" aria-labelledby={`${activeView}-tab`}>
         {renderContent()}
       </main>
     </div>
