@@ -15,13 +15,13 @@ export const ReferenceTable2027: React.FC<ReferenceTable2027Props> = ({ courses,
         <h2 className="text-xl font-bold text-slate-100">Valor 2027 - Tabela de Referência</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm text-left text-slate-300">
+        <table className="w-full text-sm text-slate-300 table-fixed">
           <thead className="text-xs text-slate-400 uppercase bg-slate-700/50">
             <tr>
-              <th scope="col" className="px-6 py-3">Curso</th>
-              <th scope="col" className="px-6 py-3 text-right">Valor</th>
-              <th scope="col" className="px-6 py-3 text-center">Horas</th>
-              <th scope="col" className="px-6 py-3 text-right">Hora/Aula</th>
+              <th scope="col" className="px-6 py-3 text-left w-5/12">Curso</th>
+              <th scope="col" className="px-6 py-3 text-left w-3/12">Valor</th>
+              <th scope="col" className="px-6 py-3 text-center w-2/12">Horas</th>
+              <th scope="col" className="px-6 py-3 text-center w-2/12">Hora/Aula</th>
             </tr>
           </thead>
           <tbody>
@@ -42,14 +42,14 @@ export const ReferenceTable2027: React.FC<ReferenceTable2027Props> = ({ courses,
                   </td>
                   
                   {isPrivacyMode ? (
-                    <td className="px-6 py-4 text-right">R$ ••••••</td>
+                    <td className="px-6 py-4 text-left">R$ ••••••</td>
                   ) : (
                     <td className="p-0"> {/* Remove padding from the cell to allow input to fill it */}
                       <input
                         type="text"
                         value={formatCurrency(course.value)}
                         onChange={handleValueChange}
-                        className="w-full text-right bg-transparent border-0 rounded-none py-4 px-6 focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-slate-700"
+                        className="w-full text-left bg-transparent border-0 rounded-none py-4 px-6 focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-slate-700"
                         aria-label={`Valor para ${course.name}`}
                       />
                     </td>
@@ -58,7 +58,7 @@ export const ReferenceTable2027: React.FC<ReferenceTable2027Props> = ({ courses,
                   <td className="px-6 py-4 text-center">
                     {course.hours}
                   </td>
-                  <td className="px-6 py-4 text-right">
+                  <td className="px-6 py-4 text-left">
                     {isPrivacyMode ? 'R$ ••••••' : formatCurrency(course.value / course.hours)}
                   </td>
                 </tr>

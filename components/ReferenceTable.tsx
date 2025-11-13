@@ -13,13 +13,13 @@ export const ReferenceTable: React.FC<ReferenceTableProps> = ({ isPrivacyMode })
         <h2 className="text-xl font-bold text-slate-100">Valor 2025 - Tabela de Referência</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm text-left text-slate-300">
+        <table className="w-full text-sm text-slate-300 table-fixed">
           <thead className="text-xs text-slate-400 uppercase bg-slate-700/50">
             <tr>
-              <th scope="col" className="px-6 py-3">Curso</th>
-              <th scope="col" className="px-6 py-3 text-right">Valor</th>
-              <th scope="col" className="px-6 py-3 text-center">Horas</th>
-              <th scope="col" className="px-6 py-3 text-right">Hora/Aula</th>
+              <th scope="col" className="px-6 py-3 text-left w-5/12">Curso</th>
+              <th scope="col" className="px-6 py-3 text-left w-3/12">Valor</th>
+              <th scope="col" className="px-6 py-3 text-center w-2/12">Horas</th>
+              <th scope="col" className="px-6 py-3 text-center w-2/12">Hora/Aula</th>
             </tr>
           </thead>
           <tbody>
@@ -28,13 +28,13 @@ export const ReferenceTable: React.FC<ReferenceTableProps> = ({ isPrivacyMode })
                 <td className="px-6 py-4 font-medium text-slate-100 whitespace-nowrap">
                   {course.name}
                 </td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 text-left">
                   {isPrivacyMode ? 'R$ ••••••' : formatCurrency(course.value)}
                 </td>
                 <td className="px-6 py-4 text-center">
                   {course.hours}
                 </td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 text-left">
                   {isPrivacyMode ? 'R$ ••••••' : formatCurrency(course.value / course.hours)}
                 </td>
               </tr>
